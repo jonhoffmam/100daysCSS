@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+* {
+  margin: 0;
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #42A7A1;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  place-content: center;
+  grid-template-columns: auto;
+}
+
+.card,
+.header-card,
+.body-card {
+  width: 280px;
+}
+
+.card {
+  height: 220px;
+  box-shadow: 4px 4px 10px #33333380;
+  display: grid;
+  place-content: center;
+}
+
+.header-card {
+  height: 60px;
+  background: #F1BA64;
+  color: #fff;
+  border-radius: 3px 3px 0 0;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.body-card {
+  height: 160px;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.big {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 11px;
+}
+
+.title,
+.type,
+.date,
+.value {
+  height: auto;
+}
+
+.title, .date {
+  padding-left: 15px;
+}
+
+.title, .type {
+  align-self: end;
+}
+
+.type, .value {
+  justify-self: end;
+  padding-right: 15px;
+}
+
+.date, .value {
+  align-self: start;
+}
+
+.parameter {
+  height: 50px;
+  display: grid;
+  grid-template-columns: auto 80px;
+  align-items: center;
+  justify-items: end;
+}
+
+.body-card .parameter span {
+  font-size: 9px;
+  height: auto;
+  padding: 0 15px;
+  color: #606060;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.card .body-card .parameter span::before {
+  content: "";
+  background: #333;
+  width: 11px;
+  height: 3px;
+  padding: 0 5px;
+  position: relative;
+}
