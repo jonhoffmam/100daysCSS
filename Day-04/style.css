@@ -35,6 +35,7 @@ body {
 .card {
   height: 220px;
   box-shadow: 4px 4px 10px #33333380;
+  border-radius: 3px;
   display: grid;
   place-content: center;
 }
@@ -53,7 +54,7 @@ body {
   background: #fff;
   border-radius: 0 0 3px 3px;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: 40px auto auto;
 }
 
 .big {
@@ -91,7 +92,7 @@ body {
 }
 
 .parameter {
-  height: 50px;
+  height: 40px;
   display: grid;
   grid-template-columns: auto 80px;
   align-items: center;
@@ -110,9 +111,83 @@ body {
 
 .card .body-card .parameter span::before {
   content: "";
-  background: #333;
   width: 11px;
   height: 3px;
-  padding: 0 5px;
+  margin: 0 5px;
   position: relative;
+  border-radius: 3px;
+}
+
+.card .body-card .parameter .red::before {
+  background: #FA7373;
+}
+
+.card .body-card .parameter .blue::before {
+  background: #7BA2FF;
+}
+
+.statistic {
+  height: 80px;
+  margin: 0 15px;
+  position: relative;
+}
+
+.line-1, .line-2, .line-3 {
+  position: absolute;
+  left: 0;
+  background: #ccc;
+  height: 1px;
+  width: 100%;
+}
+
+.line-1 {
+  top: 0;
+}
+
+.line-2 {
+  top: 40px;
+}
+
+.line-3 {
+  top: 80px;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 245px;
+}
+
+.data {
+  height: 0;
+}
+
+.data polyline {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.data.red polyline {
+  stroke: #FA7373;
+}
+
+.data.blue polyline {
+  stroke: #7BA2FF;
+}
+
+.days {
+  position: absolute;
+  top: 90px;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.day {
+  color: #949494;
+  font-size: 9px;
+  text-transform: uppercase;	
 }
