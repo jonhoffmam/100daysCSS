@@ -17,7 +17,7 @@ body {
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
   overflow: hidden;
-  background: linear-gradient(to top right, #EEBE6C 0%, #CA7C4E 100%);
+  background: linear-gradient(to top right, #bdc3c7 0%, #2c3e50 100%);
   color: #333;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,15 +31,15 @@ body {
   width: 320px;
   background: #fff;
   box-shadow: 4px 4px 10px #3333334d;
-  border-radius: 3px;
+  border-radius: 8px;
   display: grid;
   grid-template-columns: 200px auto;
 }
 
 .profile, 
 .image,
-.circle-1, 
-.circle-2, img, span {
+.circle, 
+img, span, h1, a, button {
   height: auto;
 }
 
@@ -50,41 +50,85 @@ body {
   align-items: center;
 }
 
-.circle-1 {
-  height: 90px;
-  width: 90px;
-  transform: rotate(180deg);
-}
-
-.circle-2 {
-  height: 80px;
-  width: 80px;
-  transform: rotate(180deg);
-}
-
-[class^=circle-] {	
-  border: 2px solid;
+.image {
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
-  border-color: #333 #333 #333 transparent;
+  
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card .profile .image .circle:nth-child(1) {
+  height: 100px;
+  width: 100px;
+  border-color: #2c3e50 transparent #2c3e50 #2c3e50;
+}
+
+.card .profile .image .circle:nth-child(2) {	
+  height: 90px;
+  width: 90px;
+  border-color: #2c3e50 #2c3e50 #2c3e50 transparent;	
+}
+
+.card .profile .image .circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
   cursor: pointer;
-  transition: all 1.5s;
+  transition: all 1s ease-in-out;
 }
 
-img {
-  height: 70px;
-  width: 70px;
+.card .profile .image .linkImage {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.card .profile .image img {
+  height: 80px;
+  width: 80px;
   clip-path: circle();
+  cursor: pointer;
 }
 
-.circle-1:hover .circle-2 {
-  transform: rotate(180deg);
+.card .profile .image:hover .circle:nth-child(1) {
+  transform: rotate(540deg);
 }
 
-.circle-1:hover {
-  transform: rotate(-180deg);
+.card .profile .image:hover .circle:nth-child(2) {
+  transform: rotate(-540deg);
+}
+
+.name {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.job {
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+
+button {
+  height: 32px;
+  width: 120px;
+  margin: 5px 0;
+  border-radius: 20px;
+  border: none;
+  background: #ccc;
+  color: #333;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background: #2c3e50;
+  color: #fff;
 }
 
 .stats {
@@ -96,16 +140,26 @@ img {
 .box {
   height: auto;
   margin: 1px 0 0 0;
-  background: #F5E8DF;
+  background: #bdc3c7;
   text-align: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.box:nth-child(1) {
+  margin-top: 0;
+  border-radius: 0 8px 0 0;
+}
+
+.box:nth-child(3) {
+  border-radius: 0 0 8px 0;
 }
 
 .box:hover {
-  background: #f7d1b7;
+  background: #2c3e5090;
 }
 
 .value {
