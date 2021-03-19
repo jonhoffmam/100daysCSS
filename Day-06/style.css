@@ -92,7 +92,8 @@ body {
   letter-spacing: 0.03em;
 }
 
-.frame {  
+.frame {
+  position: relative;
   width: 400px;
   height: 400px;
   border-radius: 2px;
@@ -107,7 +108,49 @@ body {
   place-content: center;
 }
 
+.menu {
+  position: absolute;
+  width: 170px;
+  height: 270px;
+  margin-right: 90px;
+  background: #43627D;
+  border-radius: 5px;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+  transition: all 0.5s;	
+}
+
+ul {	
+  padding: 7px 0;	
+  color: #93B2CD;  
+}
+
+li {
+  margin: 0;  
+  padding: 16px 17px;
+  list-style: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu ul li:hover {
+  color: #fff;
+  background: #385269;
+}
+
+.menu ul li svg {
+  margin-right: 5px;
+}
+
+.menu.show {
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  transform: translateX(-20px);
+}
+
 .card {
+  position: absolute;
   height: 300px;
   width: 300px;
   background: #fff;
@@ -115,6 +158,14 @@ body {
   box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
   display: grid;
   grid-template-rows: 60px auto;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+  transition: all 0.5s;	
+}
+
+.card.show-menu {
+  transform: translateX(150px);
 }
 
 .header {
@@ -133,8 +184,34 @@ body {
   text-align: center;
 }
 
+.header .search {
+  position: absolute;
+  right: 12px;
+  width: 0;
+  height: 34px;
+  border-radius: 16px;
+  border: none;
+  padding: 0 30px 0 16px;
+  font-size: 14px;
+  outline: none;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.header .search.show {
+  width: 230px;
+  opacity: 1;
+}
+
 .menu-icon {
-  margin: 0 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.menu-icon:hover .dash, 
+.menu-icon:hover .circle,
+.menu-icon:hover .dash-2{
+  background: #fff;
 }
 
 .dash, .dash-2 {
@@ -142,6 +219,7 @@ body {
   background: #B2DAFF;
   height: 3px;
   margin: 5px 0;
+  transition: background 0.3s;
 }
 
 .dash-1 {	
@@ -167,11 +245,23 @@ body {
   margin-left: 2px;
   background: #B2DAFF;
   border-radius: 50%;
+  transition: background 0.3s;
 }
 
-.fa-search {
+.search-icon {
   color: #B2DAFF;
-  margin: 0 20px;
+  margin-right: 20px;
+  transition: color 0.3s;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.search-icon:hover {
+  color: #fff;
+}
+
+.search-icon.color {
+  color: #333;
 }
 
 .notifications {
@@ -204,7 +294,7 @@ body {
   box-shadow: 0 0 0 3px #fff;
 }
 
-.notification .time {
+.time {
   display: block;
   padding-left: 23px;
   font-size: 11px;
