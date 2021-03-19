@@ -268,10 +268,16 @@ li {
   position: relative;
   display: grid;
   grid-template-columns: auto;
+  overflow: hidden;
 }
 
 .notifications .notification {
   margin: 0px 20px;
+}
+
+.notifications .notification:hover {
+	color: #5F98CD;
+	cursor: pointer;
 }
 
 .notifications div:nth-child(2) {
